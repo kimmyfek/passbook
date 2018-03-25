@@ -4,8 +4,8 @@ b.id
 , b.name
 , l.phone
 , b.description
-, b.website
-, b.google_rating
+, l.website
+, l.google_rating
 , b.price_level
 , l.id as loc_id
 , l.lat

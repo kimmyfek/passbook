@@ -10,8 +10,6 @@ class Business(BaseObject):
         self.business_id = kwargs.get('business_id')
         self.name = kwargs.get('name')
         self.desc = kwargs.get('desc')
-        self.website = kwargs.get('website')
-        self.google_rating = kwargs.get('google_rating')
         self.price_level = kwargs.get('price_level')
 
         self.location_ids = []
@@ -51,6 +49,8 @@ class Location(BaseObject):
         self.lon = kwargs.get('lon')
         self.address = kwargs.get('address')
         self.neighborhood = kwargs.get('neighborhood')
+        self.website = kwargs.get('website')
+        self.google_rating = kwargs.get('google_rating')
         self.phone = kwargs.get('phone')
 
         self.hours = []

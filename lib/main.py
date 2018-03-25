@@ -28,8 +28,6 @@ def get():
                     business_id=row.id,
                     name=row.name,
                     desc=row.description,
-                    website=row.website,
-                    google_rating=row.google_rating,
                     price_level=row.price_level
                 )
 
@@ -39,6 +37,8 @@ def get():
                 lon=row.lon,
                 address=row.address,
                 neighborhood=row.neighborhood,
+                website=row.website,
+                google_rating=row.google_rating,
                 phone=row.phone
             )
             biz_dict[row.id].add_location(loc)
