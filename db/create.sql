@@ -1,13 +1,12 @@
-CREATE Database IF NOT EXISTS DenverPassbook;
+DROP database DenverPassbook;
 
+CREATE Database IF NOT EXISTS DenverPassbook;
 Use DenverPassbook;
 
 CREATE TABLE IF NOT EXISTS Businesses (
     id int NOT NULL AUTO_INCREMENT ,
     name varchar(500),
     description varchar(1000),
-    website varchar(1000),
-    google_rating varchar(3),
     price_level int,
     primary key(id)
 );
@@ -22,7 +21,9 @@ CREATE TABLE IF NOT EXISTS Locations (
     loc_state varchar(100),
     neighborhood varchar(100),
     phone varchar(20),
+    google_rating varchar(3),
     active bit,
+    website varchar(1000),
     perm_closed bit,
     primary key(id)
 );
