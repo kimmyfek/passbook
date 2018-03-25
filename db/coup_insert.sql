@@ -178,8 +178,6 @@ INSERT INTO Coupons (id, bus_id, description, restrictions, coup_type) VALUES (2
 INSERT INTO Coupons (id, bus_id, description, restrictions, coup_type) VALUES (226, 92, 'Buy 1 Entree Get 1 Free', null, 'Food');
 INSERT INTO Coupons (id, bus_id, description, restrictions, coup_type) VALUES (227, 93, 'Buy 1 Drink Get 1 Free', null, 'Drink');
 INSERT INTO Coupons (id, bus_id, description, restrictions, coup_type) VALUES (228, 93, 'Buy 1 Entree Get 1 Free', null, 'Food');
-INSERT INTO Coupons (id, bus_id, description, restrictions, coup_type) VALUES (229, 93, 'Buy 1 Drink Get 1 Free', null, 'Drink');
-INSERT INTO Coupons (id, bus_id, description, restrictions, coup_type) VALUES (230, 93, 'Buy 1 Entree Get 1 Free', null, 'Food');
 INSERT INTO Coupons (id, bus_id, description, restrictions, coup_type) VALUES (231, 94, 'Buy 1 Drink Get 1 Free', null, 'Drink');
 INSERT INTO Coupons (id, bus_id, description, restrictions, coup_type) VALUES (232, 94, 'Buy 1 Entree Get 1 Free', null, 'Food');
 INSERT INTO Coupons (id, bus_id, description, restrictions, coup_type) VALUES (233, 95, 'Buy 1 Drink Get 1 Free', null, 'Drink');
