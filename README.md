@@ -36,3 +36,12 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
 
 
 docker run --name passbook_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+
+### UI TODO
+- [x] Businesses comp
+- [ ] Business comp
+- [ ] Hours comp
+- [ ] Coupons
+- [ ] Locations
+- [ ] Add new data types
+- [ ] Opentable
