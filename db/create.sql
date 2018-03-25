@@ -1,4 +1,4 @@
-DROP database DenverPassbook;
+DROP database IF EXISTS DenverPassbook;
 
 CREATE Database IF NOT EXISTS DenverPassbook;
 Use DenverPassbook;
