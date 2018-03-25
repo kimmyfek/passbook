@@ -34,8 +34,11 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
-
+---
+### Setting up MySQL with Docker
 docker run --name passbook_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
+
+---
 
 ### UI TODO
 - [x] Businesses comp
@@ -45,3 +48,4 @@ docker run --name passbook_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d my
 - [ ] Locations
 - [ ] Add new data types
 - [ ] Opentable
+- [ ] Add restaurant type to database + api
