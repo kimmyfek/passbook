@@ -2,7 +2,12 @@
 
 > A Vue.js project
 
-## Build Setup
+## Running API / Installing Virtualenv
+
+`virtualenv -p python3.6 .env && source .env/bin/activate && pip install -r requirements.txt`
+Then just `python lib/main.py`
+
+## UI Build Setup
 
 ``` bash
 # install dependencies

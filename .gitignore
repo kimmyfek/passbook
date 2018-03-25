@@ -17,11 +17,7 @@ selenium-debug.log
 *.sln
 
 # Virtualenv
-bin/*
-lib/python3.6/*
-pip-selfcheck.json
-include/*
-.Python
+.env/*
 
 # Python
 *.pyc
