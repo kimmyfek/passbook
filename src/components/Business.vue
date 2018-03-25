@@ -5,18 +5,18 @@
     <div class="col">
 
       <div class="row">
-        <div class="col-3 title">
+        <div class="col-5 title">
           <h3>{{ name }}</h3>
         </div>
         <div class="col">
         </div>
         <div class="col-3">
 
-          <div class="row">
+          <div class="col row">
             {{ locations[0].address }}
           </div>
-          <div class="row">
-            {{ formatPhone(phone) }}
+          <div class="col row">
+            {{ formatPhone(locations[0].phone) }}
           </div>
         </div>
       </div>
@@ -49,7 +49,6 @@ import Coupon from '@/components/Coupon'
 export default {
   name: 'Business',
   props: {
-    // business_id: Number, TODO
     coupons: {
       type: Array,
       required: true
@@ -91,5 +90,9 @@ export default {
 <style>
 .bus-data {
   padding: 15px 0px;
+}
+
+.title {
+  text-align: left;
 }
 </style>

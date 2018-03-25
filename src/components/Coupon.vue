@@ -3,7 +3,7 @@
   <h5>
     {{ desc }}
   </h5>
-  <h6>({{ restrictions }})</h6>
+  <h6 v-if="restrictions">({{ restrictions }})</h6>
 </div>
 </template>
 
@@ -17,9 +17,9 @@ export default {
   },
   methods: {
     getCoupColorClass: function (cType) {
-      if (cType === 'beverage') {
+      if (cType === 'Drink') {
         return 'p-3 bg-warning text-white'
-      } else if (cType === 'food') {
+      } else if (cType === 'Food') {
         return 'p-3 bg-primary text-white'
       }
     }
