@@ -18,6 +18,11 @@ class Business(BaseObject):
         self.coupon_ids = []
         self.coupons = []
 
+    def validate(self):
+        if self.business_id is None or self.name is None \
+        or self.desc is None or self.price_level is None:
+            raise Exception("Required business fields: business_id, name, price_level, desc")
+
     def add_location(self, location):
         if location.loc_id not in self.location_ids:
             self.locations.append(location)
@@ -54,6 +59,11 @@ class Location(BaseObject):
         self.phone = kwargs.get('phone')
 
         self.hours = []
+
+    def validate(self):
+        if self.address is None or self.neighborhood is None \
+        or self.active is None or self.phone is None or self.website is None:
+            raise Exception("Required location fields: address, neighborhood, active, phone, website")
 
     def add_hours(self, hours):
         hour_ids = []

@@ -1,24 +1,40 @@
-import uuid
-from flask import Flask, jsonify
+from flask import Flask, jsonify, request
 from domain import Business, Coupon, Hours, Location
-from queries import GET_ALL_QUERY
-
-from sqlalchemy import create_engine
+from queries import GET_ALL_QUERY, UPDATE_BUS_QUERY
+from adapter import SqlAdapter
 
 app = Flask(__name__)
-engine = create_engine('mysql+mysqlconnector://root:password@localhost:3306/DenverPassbook', pool_recycle=3600)
+conn_str = 'mysql+mysqlconnector://root:password@localhost:3306/DenverPassbook'
+sql_adapter = SqlAdapter(conn_str)
 
-@app.route('/')
-def index():
-    return "Hello"
+@app.route('/api/business', methods=['POST'])
+def update_biz():
+    result = {}
+    try:
+        req = request.json
+        bus = Business(
+            business_id=req.get('business_id'),
+            name=req.get('name'),
+            desc=req.get('desc'),
+            price_level=req.get('price_level')
+        )
+        bus.validate()
 
-@app.route('/api/business')
+        bus = bus.serialize()
+        sql_adapter.update(UPDATE_BUS_QUERY % bus)
+        result['success'] = True
+    except Exception as ex:
+        print("Failed to update business object: %s" % ex)
+        result['success'] = False
+        result['error'] = str(ex)
+    return jsonify(result)
+
+@app.route('/api/business', methods=['GET'])
 def get():
     result = None
     biz_dict = {}
     loc_dict = {}
-    with engine.connect() as conn:
-        result = conn.execute(GET_ALL_QUERY).fetchall()
+    result = sql_adapter.fetchall(GET_ALL_QUERY)
 
     if result:
         for row in result:
@@ -72,7 +88,6 @@ def get():
 
         biz_list = [b.serialize() for b in biz_dict.values()]
     return jsonify(biz_list)
-
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=7777, debug=True)

@@ -26,3 +26,14 @@ LEFT OUTER JOIN Locations l on l.bus_id = b.id
 LEFT OUTER JOIN Hours h on h.location_id = l.id
 LEFT OUTER JOIN Coupons c on b.id = c.bus_id
 """
+
+UPDATE_BUS_QUERY = """
+UPDATE Businesses SET description = '%(desc)s', price_level = '%(price_level)s'
+WHERE id = %(business_id)s
+"""
+
+UPDATE_LOC_QUERY = """
+UPDATE Locations SET address = '%(address)s', neighborhood = '%(neighborhood)s'
+phone = '%(phone)s', active = '%(active)s', website = '%(website)s'
+WHERE id = %(loc_id)s
+"""
