@@ -15,3 +15,13 @@ selenium-debug.log
 *.ntvs*
 *.njsproj
 *.sln
+
+# Virtualenv
+bin/*
+lib/python3.6/*
+pip-selfcheck.json
+include/*
+.Python
+
+# Python
+*.pyc
