@@ -23,7 +23,7 @@
 
       <div class="row">
         <div class="col-1">
-          <a role="button" class="btn btn-secondary" :href="website">Website</a>
+          <a role="button" class="btn btn-secondary" :href="locations[0].website">Website</a>
         </div>
         <div class="hours col">
         </div>
@@ -62,14 +62,6 @@ export default {
       required: true
     },
     name: {
-      type: String,
-      required: true
-    },
-    phone: {
-      type: String,
-      required: true
-    },
-    website: {
       type: String,
       required: true
     }
