@@ -7,28 +7,30 @@
       <div class="row">
         <div class="col-5 title">
           <h3>{{ name }}</h3>
+          <i>{{desc}}</i>
         </div>
         <div class="col">
         </div>
-        <div class="col-3">
 
-          <div class="col row">
+        <div class="col">
+          <div class="">
             {{ locations[0].address }}
           </div>
-          <div class="col row">
+          <div class="">
             {{ formatPhone(locations[0].phone) }}
           </div>
         </div>
       </div>
 
+      <br/>
+
       <div class="row">
         <div class="col-1">
-          <a role="button" class="btn btn-secondary" :href="locations[0].website">Website</a>
+          <a role="button" class="btn btn-secondary" target="_blank" :href="locations[0].website">Website</a>
         </div>
         <div class="hours col">
         </div>
         <div class="locations col">
-          {{ desc }}
         </div>
       </div>
 
