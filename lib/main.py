@@ -38,7 +38,8 @@ def get():
                 lat=row.lat,
                 lon=row.lon,
                 address=row.address,
-                neighborhood=row.neighborhood
+                neighborhood=row.neighborhood,
+                phone=row.phone
             )
             biz_dict[row.id].add_location(loc)
 
