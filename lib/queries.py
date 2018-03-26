@@ -13,6 +13,7 @@ b.id
 , l.address
 , l.neighborhood
 , l.active
+, l.perm_closed
 , h.id as hour_id
 , h.weekday
 , h.open_time

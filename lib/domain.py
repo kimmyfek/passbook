@@ -11,6 +11,7 @@ class Business(BaseObject):
         self.name = kwargs.get('name')
         self.desc = kwargs.get('desc')
         self.price_level = kwargs.get('price_level')
+        self.shutdown = False
 
         self.location_ids = []
         self.locations = []
@@ -27,6 +28,12 @@ class Business(BaseObject):
         if location.loc_id not in self.location_ids:
             self.locations.append(location)
             self.location_ids.append(location.loc_id)
+        shutdown_locs = [l.loc_id for l in self.locations if l.perm_closed]
+        if len(shutdown_locs) == len(self.locations):
+            self.shutdown = True
+        else:
+            self.shutdown = False
+
 
     def add_coupon(self, coupon):
         if coupon.coupon_id not in self.coupon_ids:
@@ -57,6 +64,8 @@ class Location(BaseObject):
         self.website = kwargs.get('website')
         self.google_rating = kwargs.get('google_rating')
         self.phone = kwargs.get('phone')
+        self.active = kwargs.get('active', True)
+        self.perm_closed = kwargs.get('perm_closed', False)
 
         self.hours = []
 

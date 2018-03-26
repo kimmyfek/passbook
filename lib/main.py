@@ -55,7 +55,9 @@ def get():
                 neighborhood=row.neighborhood,
                 website=row.website,
                 google_rating=row.google_rating,
-                phone=row.phone
+                phone=row.phone,
+                active=row.active,
+                perm_closed=row.perm_closed
             )
             biz_dict[row.id].add_location(loc)
 
