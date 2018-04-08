@@ -1,11 +1,18 @@
 # passbook
 
-> A Vue.js project
+> A Vue.js && Python 3.6 project
 
-## Running API / Installing Virtualenv
+## Init Virtualenv
 
-`virtualenv -p python3.6 .env && source .env/bin/activate && pip install -r requirements.txt`
+`virtualenv -p python3.6 .env'
+
+## Running API
+`source .env/bin/activate && pip install -r requirements.txt`
+
 Then just `python lib/main.py`
+
+## Setting up MySQL with Docker
+docker run --name passbook_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
 
 ## UI Build Setup
 
@@ -34,12 +41,6 @@ npm test
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
----
-### Setting up MySQL with Docker
-docker run --name passbook_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d mysql:latest
-
----
-
 ### UI TODO
 - [x] Businesses comp
 - [ ] Business comp
@@ -47,5 +48,20 @@ docker run --name passbook_db -p 3306:3306 -e MYSQL_ROOT_PASSWORD=password -d my
 - [ ] Coupons
 - [ ] Locations
 - [ ] Add new data types
-- [ ] Opentable
+- [ ] What to do when two locations are in the same neighborhood
 - [ ] Add restaurant type to database + api
+- [ ] Need to appropriately handle errors on the ajax calls
+- [ ] Looks nice on mobile
+- [ ] Size down coupon text if too long -- Coupons can get absurdly sized.
+- [ ] If only one coupon, it needs to fill
+- [ ] Put stars in rating
+- [ ] Pull all query params from websites
+- [ ] What to do about permanently closed
+- [ ] Some tests
+- [ ] Switch between locations
+- [ ] Locations: Lodo are LJ'd weird
+
+## Long Term ToDo
+- [ ] Users
+- [ ] Opentable
+- [ ] Integrate eBates
