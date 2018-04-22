@@ -23,10 +23,13 @@
     </div>
 
     <div class="col col-3 coupons">
-      <span v-for="coup in coupons" :key="coup.coupon_id">
-        <coupon v-bind=coup></coupon>
-      </span>
+      <b-row no-gutters v-for="coup in coupons" :key="coup.coupon_id">
+        <b-col>
+          <coupon v-bind=coup></coupon>
+        </b-col>
+      </b-row>
     </div>
+
   </div>
 </div>
 </template>

@@ -125,4 +125,8 @@ export default {
   margin-right: 0px !important;
 }
 
+#ddown-sm {
+  float: left;
+}
+
 </style>

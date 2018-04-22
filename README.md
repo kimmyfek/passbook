@@ -42,24 +42,27 @@ npm test
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 ### UI TODO
-- [x] Businesses comp
-- [ ] Business comp
-- [ ] Hours comp
-- [ ] Coupons
-- [ ] Locations
-- [ ] Add new data types
-- [ ] What to do when two locations are in the same neighborhood
-- [ ] Add restaurant type to database + api
+- [ ] Add new data types -- What does this mean?
 - [ ] Need to appropriately handle errors on the ajax calls
 - [ ] Looks nice on mobile
-- [ ] Size down coupon text if too long -- Coupons can get absurdly sized.
-- [ ] If only one coupon, it needs to fill
-- [ ] Put stars in rating
-- [ ] Pull all query params from websites
-- [ ] What to do about permanently closed
 - [ ] Some tests
-- [ ] Switch between locations
-- [ ] Locations: Lodo are LJ'd weird
+- Businesses
+  - [ ] What to do about permanently closed
+  - [ ] "Hide" Button
+  - [ ] Add restaurant type to database + api
+- Locations
+  - [x] Pull all query params from websites
+  - [x] Lodo && RiNo is LJ'd weird
+  - [ ] Put stars in rating
+  - [ ] Switch between locations
+  - [ ] What to do when two locations are in the same neighborhood
+  - [ ] Hours comp
+- Coupons
+  - [ ] Size down coupon text if too long -- Coupons can get absurdly sized.
+  - [ ] Both coupons should be same size
+  - [ ] If only one coupon, it needs to fill
+  - [ ] If filling, make sure text is in the middle
+
 
 ## Long Term ToDo
 - [ ] Users
