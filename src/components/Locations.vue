@@ -4,15 +4,15 @@
     <b-col>
       <b-dropdown id="ddown-sm"
         size="sm"
-        :text="'Locations (' + normalized.neighborhoods.length + '): ' + active.neighborhood"
+        :text="'Locations (' + locations.length + '): ' + formatNeighborhood(active, true)"
         class="m-2 loc-button"
       >
         <b-dropdown-item-button
-          v-for="(loc, neighborhood) in normalized.locations"
+          v-for="loc in locations"
           :key="busID + loc.loc_id"
           v-on:click="setActive(loc)"
         >
-          {{ neighborhood }}
+          {{ formatNeighborhood(loc, false) }}
         </b-dropdown-item-button>
       </b-dropdown>
     </b-col>
@@ -67,7 +67,6 @@
 export default {
   data () {
     return {
-      normalized: null,
       active: null
     }
   },
@@ -91,25 +90,22 @@ export default {
       return (!m) ? null : '(' + m[1] + ') ' + m[2] + '-' + m[3]
     },
 
-    setActive: function (loc) {
-      this.active = loc
+    formatNeighborhood: function (loc, inMenu) {
+      var street = loc.address.split(',')[0]
+      var formatted = loc.neighborhood + ' - ' + street
+      if (inMenu) {
+        if (formatted.length > 28) {
+          formatted = formatted.substring(0, 25) + '...'
+        }
+      }
+      return formatted
     },
 
-    normalizeLocations: function (locs) {
-      var normalized = {
-        neighborhoods: [],
-        locations: {}
-      }
-      for (var i in locs) {
-        var loc = locs[i]
-        normalized.neighborhoods.push(loc.neighborhood)
-        normalized.locations[loc.neighborhood] = loc
-      }
-      this.normalized = normalized
+    setActive: function (loc) {
+      this.active = loc
     }
   },
   created: function () {
-    this.normalizeLocations(this.locations)
     this.active = this.locations[0] // TODO
   }
 }

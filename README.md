@@ -54,8 +54,10 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
   - [x] Pull all query params from websites
   - [x] Lodo && RiNo is LJ'd weird
   - [ ] Put stars in rating
-  - [ ] Switch between locations
-  - [ ] What to do when two locations are in the same neighborhood
+  - [x] Switch between locations
+  - [ ] Rather than use a function to trim length of button, use css.
+  - [ ] Sort locations list by neighborhood name && address
+  - [x] What to do when two locations are in the same neighborhood
   - [ ] Hours comp
 - Coupons
   - [ ] Size down coupon text if too long -- Coupons can get absurdly sized.
