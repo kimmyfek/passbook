@@ -26,6 +26,7 @@ FROM Businesses b
 LEFT OUTER JOIN Locations l on l.bus_id = b.id
 LEFT OUTER JOIN Hours h on h.location_id = l.id
 LEFT OUTER JOIN Coupons c on b.id = c.bus_id
+ORDER BY b.name, l.neighborhood, l.address
 """
 
 UPDATE_BUS_QUERY = """

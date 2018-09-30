@@ -2,34 +2,35 @@
 <div class="container border-top border-bottom border-secondary">
   <div class="row bus-data">
 
-    <div class="col-5">
+    <div v-if="shutdown" class="shutdown alert alert-danger">
+      <span> {{ name }} is permanently closed. </span>
+    </div>
+
+    <div class="col-xs-6 col-md-4">
 
       <div class="row">
         <div class="col lj">
           <h3>{{ name }}</h3>
         </div>
+
       </div>
 
       <div class="row">
-        <div class="col-11 lj">
+        <div class="col lj">
           <i>{{ desc }}</i>
         </div>
       </div>
-
     </div>
 
-    <div class="col-4">
+    <div class="col-xs-6 col-md-4">
       <locationsComp :busID=business_id :locations=locations></locationsComp>
     </div>
 
-    <div class="col col-3 coupons">
-      <b-row no-gutters v-for="coup in coupons" :key="coup.coupon_id">
-        <b-col>
+    <div class="col-xs-6 col-md-4 coup-cont">
+      <div v-for="coup in coupons" :key="coup.coupon_id">
           <coupon v-bind=coup></coupon>
-        </b-col>
-      </b-row>
+      </div>
     </div>
-
   </div>
 </div>
 </template>
@@ -53,6 +54,10 @@ export default {
       type: String,
       required: true
     },
+    shutdown: {
+      type: Boolean,
+      required: true
+    },
     locations: {
       type: Array,
       required: true
@@ -73,11 +78,34 @@ export default {
 
 <style scoped>
 .bus-data {
-  padding: 15px 0px;
+  margin-top: 2%;
+  margin-bottom:2%;
+  position:relative;
 }
 
 .lj {
   text-align: left;
+}
+
+.coup-cont {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  height: 200px;
+}
+.shutdown {
+  position: absolute;
+  z-index: 1;
+  height:100%;
+  width:100%;
+  opacity: 0.95;
+}
+
+.shutdown span {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  text-transform: uppercase;
 }
 
 </style>

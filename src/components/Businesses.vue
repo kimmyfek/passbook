@@ -36,6 +36,6 @@ export default {
 
 <style>
 .businesses {
-  margin: 100px;
+  margin: 10%;
 }
 </style>

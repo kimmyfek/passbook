@@ -1,5 +1,5 @@
 <template>
-<div :class="getCoupColorClass(coup_type)">
+<div class="coup" :class="getCoupColorClass(coup_type)">
   <h5>
     {{ desc }}
   </h5>
@@ -30,6 +30,7 @@ export default {
 
 <style scoped>
 .coup {
-  # height: 100%
+  flex-grow: 1;
+  height: 100px;
 }
 </style>

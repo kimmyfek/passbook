@@ -92,4 +92,4 @@ def get():
     return jsonify(biz_list)
 
 if __name__ == "__main__":
-    app.run(host='0.0.0.0', port=7777, debug=True)
+    app.run(host='0.0.0.0', port=7777, debug=False)
