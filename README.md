@@ -42,12 +42,12 @@ npm test
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
 
 ### UI TODO
-- [ ] Add new data types -- What does this mean?
 - [ ] Need to appropriately handle errors on the ajax calls
-- [ ] Looks nice on mobile
+- [x] Looks nice on mobile
 - [ ] Some tests
+- [ ] Filter
 - Businesses
-  - [ ] What to do about permanently closed
+  - [x] What to do about permanently closed
   - [ ] "Hide" Button
   - [ ] Add restaurant type to database + api
 - Locations
@@ -61,7 +61,7 @@ For a detailed explanation on how things work, check out the [guide](http://vuej
   - [ ] Hours comp
 - Coupons
   - [ ] Size down coupon text if too long -- Coupons can get absurdly sized.
-  - [ ] Both coupons should be same size
+  - [x] Both coupons should be same size
   - [ ] If only one coupon, it needs to fill
   - [ ] If filling, make sure text is in the middle
 
