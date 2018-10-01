@@ -1,7 +1,6 @@
 <template>
   <div id="menu">
-  <Slide right noOverlay>
-    <h2> Filter </h2>
+  <Slide right noOverlay menuLabel="Filter">
     <b-form-group label="Neighborhood(s)">
       <b-form-checkbox-group
         stacked
@@ -24,12 +23,14 @@ export default {
   methods: {
     checkboxToggle () {
       console.log('clicked')
+      this.$parent.selectedNeighborhoods = this.selectedNeighborhoods
+      console.log(this.$parent.selectedNeighborhoods)
     }
   },
   data () {
     return {
-      selectedNeighborhoods: [],
       // TODO: move to backend API
+      selectedNeighborhoods: [],
       neighborhoods: [
         {text: 'Ballpark', value: 'Ballpark'},
         {text: 'Cap Hill', value: 'Cap Hill'},
@@ -64,12 +65,15 @@ export default {
 
 <style>
   .bm-burger-button {
-    top: 10px;
+    width: auto;
+    top: auto;
   }
   .bm-burger-bars {
-      background-color: white;
   }
   .bm-menu {
     text-align: left;
+  }
+  .label {
+    font-size: xx-large;
   }
 </style>

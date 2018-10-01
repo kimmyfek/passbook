@@ -12,6 +12,10 @@ Vue.use(BootstrapVue)
 
 Vue.config.productionTip = false
 
+Vue.filter('stringifyArray', function (value) {
+  return value.join(', ')
+})
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',

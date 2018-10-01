@@ -107,6 +107,9 @@ export default {
   },
   created: function () {
     this.active = this.locations[0] // TODO
+  },
+  updated: function () {
+    this.active = this.locations[0] // TODO
   }
 }
 </script>
